@@ -1,21 +1,17 @@
 import React, {Component} from 'react';
-import { Layout } from 'antd';
+import Login from './pages/Login'
+import {BrowserRouter,Switch,Route} from 'react-router-dom'
+import Admin from "./pages/Admin/Admin";
 import './App.less'
-import './reset.less'
-const { Header, Footer, Sider, Content } = Layout;
-
-
 class App extends Component {
     render() {
         return (
-            <Layout className='layout-contanier'>
-                <Sider >Sider</Sider>
-                <Layout>
-                    <Header className='layout-content-heard'>Header</Header>
-                    <Content className='layout-content-content'>Content</Content>
-                    <Footer className='layout-content-footer'>Footer</Footer>
-                </Layout>
-            </Layout>
+           <BrowserRouter>
+               <Switch>
+                 <Route path='/login' component={Login}></Route>
+                  <Route path='/' component={Admin}></Route>
+               </Switch>
+           </BrowserRouter>
         );
     }
 }
